@@ -1,0 +1,188 @@
+<resources>
+    <string name="app_name">Past World</string>
+
+    <string name="ecology">экология</string>
+    <string name="people">население</string>
+    <string name="military">армия</string>
+    <string name="money">деньги</string>
+    <string name="Lose">Вы проиграли!</string>
+
+    <string name="ministerEconomyQ1">Черный рынок несет угрозу для честного бизнеса. Нужно вмешаться.</string>
+    <string name="ministerEconomyName">Министр экономики А. Дуган</string>
+    <string name="ministerEconomyLO1">Нет</string>
+    <string name="ministerEconomyRO1">Да</string>
+
+    <string name="chefName">Шеф-повар Марио</string>
+    <string name="chefQ1">У меня нет опыта в политике, но в школе я был старостой класса. Как думаете, я смогу занять место генерала?</string>
+    <string name="chefLO1">Нет</string>
+    <string name="chefRO1">Да</string>
+    <string name="chefQ2">Вы не видели генерала? Кажется, он украл последнюю бутылку Ришбура.</string>
+    <string name="chefLO2">Пусть забирает</string>
+    <string name="chefRO2">Он был у себя</string>
+
+    <string name="scoutName">Глава разведки Т. Мур</string>
+    <string name="scoutQ1">Мы раскрыли сеть наркокартелей, которые прикрывались благотворительными организациями.</string>
+    <string name="scoutLO1">Неважно</string>
+    <string name="scoutRO1">Нужно вмешаться</string>
+    <string name="scoutQ2">Похоже, некоторые солдаты занимаются контрабандой оружия. Нужно принять меры.</string>
+    <string name="scoutLO2">Нет</string>
+    <string name="scotRO2">Да</string>
+    <string name="scoutQ3">Поступил анонимный звонок. Ваша может быть в опасности. Усилить охрану?</string>
+    <string name="scoutLO3">Нет</string>
+    <string name="scoutRO3">Да</string>
+    <string name="scoutQ4">Ваш дом плохо защищен. Нужно улучшить систему безопасности.</string>
+    <string name="scoutLO4">Нет</string>
+    <string name="scoutRO4">Да</string>
+
+    <string name="priestName">Отец Латониус</string>
+    <string name="priestQ1">Северные страны не исповедуют ни одну религию. Направим туда наших миссионеров?</string>
+    <string name="priestLO1">Нет</string>
+    <string name="priestRO1">Да</string>
+    <string name="priestQ2">В интернете распространяется новая религия. Под ее влиянием многие молодые люди совершают жестокие действия.</string>
+    <string name="priestLO2">Ничего страшного</string>
+    <string name="priestRO2">Нужно вмешаться</string>
+    <string name="priestQ3">Я знаю, что вы женаты. Предлагаю провести повторную церемонию в храме! Сделаем ваш союз действительным в глазах Божьих!</string>
+    <string name="priestLO3">Нет</string>
+    <string name="priestRO3">Да</string>
+    <string name="priestQ4">Один солдат осквернил дверь собора плевком. Его сняли на камеру, и запись попала в сеть! Накажите его!</string>
+    <string name="priestLO4">Нет</string>
+    <string name="priestRO4">Да</string>
+    <string name="priestQ5">В стране возникло несколько верований, которые противоречат моему учению. Они порочны и опасны!</string>
+    <string name="priestLO5">Ничего страшного</string>
+    <string name="priestRO5">Запретим их</string>
+    <string name="priestQ6">В интернете появилось видео, на котором девушка совершает суицид во имя религии. Его нужно заблокировать.</string>
+    <string name="priestLO6">Не блокировать</string>
+    <string name="priestRO6">Блокировать</string>
+    <string name="priestQ7">Толпа язычников бросает камни в один из наших храмов.</string>
+    <string name="priestLO7">Это не мое дело</string>
+    <string name="priestRO7">Ввести армию</string>
+    <string name="priestQ8">В стране множатся нечестивцы и богохульники. Нужно ужесточить порядки.</string>
+    <string name="priestLO8">Нет</string>
+    <string name="priestRO8">Да</string>
+
+    <string name="scientistName">Научный сотрудник Б. Торрес</string>
+    <string name="scientistQ1">Группа исследователей работает над проектом по спасению пригородных районов от радиации. Но им не хватает средств.</string>
+    <string name="scientistQ2">Испытания ядерного оружия могли бы существенно продвинуть науку вперед.</string>
+    <string name="scientistQ3">Наши технологии устарели. Нужно инвестировать в исследования.</string>
+    <string name="scientistQ4">Мы разрабатываем сыворотку, способную повысить продуктивность коров. Можно её протестировать?</string>
+    <string name="scientistQ5">Новый проект по генной инженерии растений нуждается в финансировании.</string>
+    <string name="scientistLO1">Не сейчас</string>
+    <string name="scientistLO2">Это опасно</string>
+    <string name="scientistLO3">Не сейчас</string>
+    <string name="scientistLO4">Нет</string>
+    <string name="scientistLO5">Не сейчас</string>
+    <string name="scientistRO1">Помочь</string>
+    <string name="scientistRO2">Верно</string>
+    <string name="scientistRO3">Хорошо</string>
+    <string name="scientistRO4">Да</string>
+    <string name="scientistRO5">Хорошо</string>
+
+    <string name="generalName">Генерал М. Брукс</string>
+    <string name="generalQ1">Отдел исследований не справляется с работой. Им нужно больше ресурсов, чтобы создавать оружие!</string>
+    <string name="generalQ2">Народ несчастен, но мы можем обвинить во всем иммигрантов.</string>
+    <string name="generalQ3">Западные страны инвестируют в вооружение. Нанесем превентивный удар!</string>
+    <string name="generalQ4">Западные страны предлагают подписать мирный договор. Это позволит прекратить войны.</string>
+    <string name="generalQ5">Наша армия может оказаться неэффективной в случае войны. Создадим ядерное оружие!</string>
+    <string name="generalQ6">В пригородах столицы стало опасно. Нужно увеличить количество патрулей.</string>
+    <string name="generalLO1">Нет</string>
+    <string name="generalLO2">Нет</string>
+    <string name="generalLO3">Без паники</string>
+    <string name="generalLO4">Не подписывать</string>
+    <string name="generalLO5">Нет</string>
+    <string name="generalLO6">Нет</string>
+    <string name="generalRO1">Да</string>
+    <string name="generalRO2">Хорошая идея</string>
+    <string name="generalRO3">К оружию</string>
+    <string name="generalRO4">Подписать</string>
+    <string name="generalRO5">Да</string>
+    <string name="generalRO6">Да</string>
+
+    <string name="houseMaidName">Горничная Анна</string>
+    <string name="housemaidQ1">Только посмотрите - муравьи повсюду! Что этот садовник о себе думает? Сейчас я разберусь!</string>
+    <string name="housemaidLO1">Нет</string>
+    <string name="housemaidRO1">Да</string>
+
+    <string name="gardenerName">Садовник М. Грин</string>
+    <string name="gardenerQ1">М-министр здравохранения ошиьается. Нам нужен этот пестицид: он не токсичный и не опасный.</string>
+    <string name="gardenerQ2">Давайте посадим новые цветы возле резиденции. Я знаю несколько сортов, которые можно заказать из-за границы.</string>
+    <string name="gardenerLO1">Она лучше знает</string>
+    <string name="gardenerRO1">Вы правы</string>
+    <string name="gardenerLO2">Нет</string>
+    <string name="gardenerRO2">Да</string>
+
+    <string name="vicePresidentName">Вице-президент Д. Орвилл</string>
+    <string name="vicePresidentQ1">Некоторые фармацевтические компании хотят тестировать свою продукцию на животных.</string>
+    <string name="vicePresidentQ2">Нам нужны мощные источники энергии. Предлагаю снова открыть атомные электростанции.</string>
+    <string name="vicePresidentLO1">Запретить</string>
+    <string name="vicePresidentLO2">Нет</string>
+    <string name="vicePresidentRO1">Разрешить</string>
+    <string name="vicePresidentRO2">Да</string>
+
+    <string name="ministerOfHelthName">Министр здравохранения С. Гибсон</string>
+    <string name="ministerOfHelthQ1">Отец Латониус поощряет поломничества на территории с высокой радисацией. Нам нужно вмешаться</string>
+    <string name="ministerOfHelthQ2">Большинство людей по-прежнему живут в нищите. Это необходимо исправить.</string>
+    <string name="ministerOfHelthQ3">Некоторые фермы содержат животных в жутких условиях. Нужно вмешаться.</string>
+    <string name="ministerOfHelthQ4">В некоторых пригородных райнонах резко повысился уровень радиации. Ваши указания?</string>
+    <string name="ministerOfHelthLO1">Нет</string>
+    <string name="ministerOfHelthLO2">Нет</string>
+    <string name="ministerOfHelthLO3">Нет</string>
+    <string name="ministerOfHelthLO4">Скройте от прессы</string>
+    <string name="ministerOfHelthRO1">Да</string>
+    <string name="ministerOfHelthRO2">Да</string>
+    <string name="ministerOfHelthRO3">Да</string>
+    <string name="ministerOfHelthRO4">Эвакуируйте людей</string>
+
+    <string name="governorName">Губернатор Б. Армстронг</string>
+    <string name="governorQ1">Некоторые законы устарели. Нужно их пересмотреть</string>
+    <string name="governorQ2">Старый саркофаг ядерного реактора разваливается по частям. Утечка радиации может произойти в любой момент.</string>
+    <string name="governorQ3">На нас напали западные страны. Нужно дать ответный огонь!</string>
+    <string name="governorQ4">Какие-то рабочие устроили мятеж и крушаь улицы. Полиция не справляется.</string>
+    <string name="governorQ5">На улицах южных городов больше десяти тысяч бездомных. Нужно о них позаботиться: скоро наступит зима.</string>
+    <string name="governorQ6">В здании заброшенной атомной электростанции живут бездомные. Некоторые из них мутировали. Люди напуганы.</string>
+    <string name="governorQ7">На улицах крупных городов становится опасно. Нужно ввести комендантский час.</string>
+    <string name="governorLO1">Нет необходимости</string>
+    <string name="governorLO2">Не сейчас</string>
+    <string name="governorLO3">Защищаться!</string>
+    <string name="governorLO4">Не вмешиваться</string>
+    <string name="governorLO5">Нет</string>
+    <string name="governorLO6">Пусть живут</string>
+    <string name="governorLO7">Нет</string>
+    <string name="governorRO1">Ладно</string>
+    <string name="governorRO2">Отремонтировать</string>
+    <string name="governorRO3">Ответный огонь!</string>
+    <string name="governorRO4">Ввести армию</string>
+    <string name="governorRO5">Да</string>
+    <string name="governorRO6">Прогоните бездомных</string>
+    <string name="governorRO7">Да</string>
+
+    <string name="ambassadorName">Посол Т. Росс</string>
+    <string name="ambassadorQ1">Нужно открыть посольства в соседних странах. Это снизит вероятность войн</string>
+    <string name="ambassadorQ2">На северо-восточные страны обрушилась суровая зима. Им нужна финансовая помощь.</string>
+    <string name="ambassadorQ3">Похоже, дела налаживаются и войны постепенно прекращаются. Нужно отложить деньги на трудные времена</string>
+    <string name="ambassadorLO1">Нет необходимости</string>
+    <string name="ambassadorLO2">Это не наши заботы</string>
+    <string name="ambassadorLO3">Нет</string>
+    <string name="ambassadorRO1">Хорошая идея</string>
+    <string name="ambassadorRO2">Помочь</string>
+    <string name="ambassadorRO3">Да</string>
+    <string name="change">Изменится:</string>
+    <string name="year">год</string>
+    <string name="onThrone">У власти</string>
+    <string name="shortYear">г.</string>
+    <string name="dayShort">д.</string>
+    <string name="emptyString"> </string>
+    <string name="opinionsLose">Что...</string>
+    <string name="loseEcology">Все умерли от болезней!</string>
+    <string name="losePeople">Началось восстание!</string>
+    <string name="loseMilitary">Соседние страны захватили нашу страну!</string>
+    <string name="loseMoney">Страна обеднела!</string>
+
+    <string name="title_activity_start">StartActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="start">Начать!</string>
+    <string name="buyCounselors">Купить советников</string>
+    <string name="remainedCounselors">Осталось советников:</string>
+
+
+</resources>

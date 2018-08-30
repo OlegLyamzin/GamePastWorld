@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutStart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background"
+        tools:context="com.life.oleg.pastworld.view.StartActivity">
+
+        <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+
+        <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+
+        <Button
+            android:id="@+id/buttonStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/start" />
+
+        <Button
+            android:id="@+id/buttonBuyCounselors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/buttonStart"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="15dp"
+            android:text="@string/buyCounselors" />
+
+        <TextView
+            android:id="@+id/counselorsCounter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/buttonBuyCounselors"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"
+            android:text="TextView" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutGame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background">
+
+        <LinearLayout
+            android:id="@+id/linnerLayotTop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@color/backgroundTopAndBottom"
+            android:orientation="vertical"
+            android:paddingTop="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingLeft="15dp">
+
+                <TextView
+                    android:id="@+id/ecology"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingRight="15dp"
+                    android:text="@string/ecology" />
+
+                <TextView
+                    android:id="@+id/people"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingRight="15dp"
+                    android:text="@string/people" />
+
+                <TextView
+                    android:id="@+id/military"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingRight="15dp"
+                    android:text="@string/military" />
+
+                <TextView
+                    android:id="@+id/money"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingRight="15dp"
+                    android:text="@string/money" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingLeft="15dp"
+                android:paddingRight="5dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ProgressBar
+                        android:id="@+id/ecologyProgressBar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:paddingRight="15dp" />
+
+                    <ImageView
+                        android:id="@+id/imageChangeEcologyLeft"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/ecologyProgressBar"
+                        android:layout_alignRight="@+id/ecologyProgressBar"
+                        android:layout_alignTop="@+id/ecologyProgressBar"
+                        android:layout_centerVertical="true"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        app:srcCompat="@drawable/circle_down" />
+
+                    <ImageView
+                        android:id="@+id/imageChangeEcologyRight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/ecologyProgressBar"
+                        android:layout_alignRight="@+id/ecologyProgressBar"
+                        android:layout_alignTop="@+id/ecologyProgressBar"
+                        android:layout_centerVertical="true"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        app:srcCompat="@drawable/circle_down" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ProgressBar
+                        android:id="@+id/peopleProgressBar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:paddingRight="15dp" />
+
+                    <ImageView
+                        android:id="@+id/imageChangePeopleLeft"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/peopleProgressBar"
+                        android:layout_alignRight="@+id/peopleProgressBar"
+                        android:layout_alignTop="@+id/peopleProgressBar"
+                        android:layout_centerVertical="true"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:cropToPadding="false"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        app:srcCompat="@drawable/circle_down" />
+
+                    <ImageView
+                        android:id="@+id/imageChangePeopleRight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/peopleProgressBar"
+                        android:layout_alignRight="@+id/peopleProgressBar"
+                        android:layout_alignTop="@+id/peopleProgressBar"
+                        android:layout_centerVertical="true"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:cropToPadding="false"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        app:srcCompat="@drawable/circle_down" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ProgressBar
+                        android:id="@+id/militaryProgressBar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:paddingRight="15dp" />
+
+                    <ImageView
+                        android:id="@+id/imageChangeMilitaryLeft"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/militaryProgressBar"
+                        android:layout_alignRight="@+id/militaryProgressBar"
+                        android:layout_alignTop="@+id/militaryProgressBar"
+                        android:layout_centerVertical="true"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        app:srcCompat="@drawable/circle_down" />
+
+                    <ImageView
+                        android:id="@+id/imageChangeMilitaryRight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/militaryProgressBar"
+                        android:layout_alignRight="@+id/militaryProgressBar"
+                        android:layout_alignTop="@+id/militaryProgressBar"
+                        android:layout_centerVertical="true"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        app:srcCompat="@drawable/circle_down" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ProgressBar
+                        android:id="@+id/moneyProgressBar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:paddingRight="15dp" />
+
+                    <ImageView
+                        android:id="@+id/imagechangeMoneyLeft"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/moneyProgressBar"
+                        android:layout_alignRight="@+id/moneyProgressBar"
+                        android:layout_alignTop="@+id/moneyProgressBar"
+                        android:layout_centerVertical="true"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        app:srcCompat="@drawable/circle_down" />
+
+                    <ImageView
+                        android:id="@+id/imagechangeMoneyRight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/moneyProgressBar"
+                        android:layout_alignRight="@+id/moneyProgressBar"
+                        android:layout_alignTop="@+id/moneyProgressBar"
+                        android:layout_centerVertical="true"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        app:srcCompat="@drawable/circle_down" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_weight="1"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/textTask"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Hello World!"
+                    android:textAlignment="center" />
+            </ScrollView>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/backgroundPerson"
+            style="@style/styleimg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/relativeLayoutPerson"
+            android:layout_alignLeft="@+id/relativeLayoutPerson"
+            android:layout_alignRight="@+id/relativeLayoutPerson"
+            android:layout_alignTop="@+id/relativeLayoutPerson"
+            android:adjustViewBounds="true"
+            android:cropToPadding="false"
+            app:srcCompat="@drawable/background_card" />
+
+        <TextView
+            android:id="@+id/textName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/linerLayoutBottom"
+            android:gravity="center"
+            android:paddingBottom="20dp"
+            android:paddingTop="10dp"
+            android:text="TextView"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:id="@+id/linerLayoutBottom"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="false"
+            android:background="@color/backgroundTopAndBottom"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/textYear"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:gravity="center"
+                android:paddingBottom="10dp"
+                android:text="TextView"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayoutPerson"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textName"
+            android:layout_below="@+id/linnerLayotTop"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="45dp"
+            android:layout_marginRight="45dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/imagePerson"
+                style="@style/styleimg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                app:srcCompat="@drawable/example_avatar" />
+
+            <TextView
+                android:id="@+id/textLeftOpinion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/imagePerson"
+                android:layout_alignTop="@+id/imagePerson"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="8dp"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/textRightOpinion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/imagePerson"
+                android:layout_alignTop="@+id/imagePerson"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="8dp"
+                android:text="TextView" />
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/buttonCounselor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="4dp"
+            android:text="Cоветник" />
+
+    </RelativeLayout>
+
+</FrameLayout>
