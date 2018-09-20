@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="400"
+        android:font="@font/b52"
+        app:fontStyle="normal"
+        app:fontWeight="400"
+        app:font="@font/b52"
+
+        />
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="100"
+        android:font="@font/bptypewriteregularmine"
+        app:fontStyle="normal"
+        app:fontWeight="100"
+        app:font="@font/bptypewriteregularmine"
+        />
+</font-family>

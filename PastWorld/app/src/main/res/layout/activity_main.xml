@@ -12,7 +12,7 @@
         android:id="@+id/relativeLayoutStart"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background"
+        android:background="@color/backgroundTopAndBottom"
         tools:context="com.life.oleg.pastworld.view.StartActivity">
 
         <!-- The primary full-screen view. This can be replaced with whatever view
@@ -27,6 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+            android:fontFamily="@font/main_font"
             android:text="@string/start" />
 
         <Button
@@ -36,6 +37,7 @@
             android:layout_above="@+id/buttonStart"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="15dp"
+            android:fontFamily="@font/main_font"
             android:text="@string/buyCounselors" />
 
         <TextView
@@ -44,16 +46,17 @@
             android:layout_height="wrap_content"
             android:layout_above="@+id/buttonBuyCounselors"
             android:layout_centerHorizontal="true"
-            android:gravity="center"
             android:layout_marginBottom="20dp"
-            android:text="TextView" />
+            android:fontFamily="@font/main_font"
+            android:gravity="center"
+            android:text="Добро пожаловать!" />
     </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/relativeLayoutGame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background">
+        android:background="@color/background_color">
 
         <LinearLayout
             android:id="@+id/linnerLayotTop"
@@ -76,6 +79,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:layout_weight="1"
+                    android:fontFamily="@font/main_font"
                     android:gravity="center"
                     android:paddingRight="15dp"
                     android:text="@string/ecology" />
@@ -86,6 +90,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:layout_weight="1"
+                    android:fontFamily="@font/main_font"
                     android:gravity="center"
                     android:paddingRight="15dp"
                     android:text="@string/people" />
@@ -96,6 +101,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:layout_weight="1"
+                    android:fontFamily="@font/main_font"
                     android:gravity="center"
                     android:paddingRight="15dp"
                     android:text="@string/military" />
@@ -106,6 +112,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:layout_weight="1"
+                    android:fontFamily="@font/main_font"
                     android:gravity="center"
                     android:paddingRight="15dp"
                     android:text="@string/money" />
@@ -311,6 +318,7 @@
                     android:id="@+id/textTask"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:fontFamily="@font/main_font"
                     android:gravity="center"
                     android:text="Hello World!"
                     android:textAlignment="center" />
@@ -336,6 +344,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_above="@+id/linerLayoutBottom"
+            android:fontFamily="@font/main_font"
             android:gravity="center"
             android:paddingBottom="20dp"
             android:paddingTop="10dp"
@@ -357,6 +366,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0"
+                android:fontFamily="@font/main_font"
                 android:gravity="center"
                 android:paddingBottom="10dp"
                 android:text="TextView"
@@ -382,7 +392,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                app:srcCompat="@drawable/example_avatar" />
+                app:srcCompat="@drawable/avatar_governer" />
 
             <TextView
                 android:id="@+id/textLeftOpinion"
@@ -392,6 +402,8 @@
                 android:layout_alignTop="@+id/imagePerson"
                 android:layout_marginRight="25dp"
                 android:layout_marginTop="8dp"
+                android:fontFamily="@font/main_font"
+                android:textColor="@color/black"
                 android:text="TextView" />
 
             <TextView
@@ -402,6 +414,8 @@
                 android:layout_alignTop="@+id/imagePerson"
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="8dp"
+                android:fontFamily="@font/main_font"
+                android:textColor="@color/black"
                 android:text="TextView" />
 
         </RelativeLayout>
@@ -412,6 +426,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_margin="4dp"
+            android:fontFamily="@font/main_font"
             android:text="Cоветник" />
 
     </RelativeLayout>

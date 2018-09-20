@@ -6,7 +6,9 @@
     <!--<color name="colorBackground">#565354</color>-->
     <color name="accent_material_light">#3763e9</color>
     <color name="backNavBar">#75000000</color>
-    <color name="backgroundTopAndBottom">#2e3032</color>
+    <color name="backgroundTopAndBottom">#190000</color>
 
     <color name="black_overlay">#66000000</color>
+    <color name="black">#000000</color>
+    <color name="background_color">#5c5353</color>
 </resources>
