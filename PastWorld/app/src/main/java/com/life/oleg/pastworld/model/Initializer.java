@@ -203,41 +203,42 @@ public class Initializer /*extends AppCompatActivity */{
     }
 
     private  void governor(ArrayList<ICard> arrayList) {
+        int imagePers = R.drawable.avatar_governer;
         arrayList.add(new Card(R.string.governorName, R.string.governorQ1,
                 R.string.governorLO1, R.string.governorRO1
                 ,
                 new Status(0, -10, 0, 10),
-                new Status(0, 10, 0, -10)));
+                new Status(0, 10, 0, -10), imagePers));
         arrayList.add(new Card(R.string.governorName, R.string.governorQ2,
                 R.string.governorLO2, R.string.governorRO2
                 ,
                 new Status(-20, -10, 0, 0),
-                new Status(10, 0, 0, -20)));
+                new Status(10, 0, 0, -20), imagePers));
         arrayList.add(new Card(R.string.governorName, R.string.governorQ3,
                 R.string.governorLO3, R.string.governorRO3
                 ,
                 new Status(0, -10, 10, 0),
-                new Status(0, 10, -10, 0)));
+                new Status(0, 10, -10, 0), imagePers));
         arrayList.add(new Card(R.string.governorName, R.string.governorQ4,
                 R.string.governorLO4, R.string.governorRO4
                 ,
                 new Status(0, 10, -10, 0),
-                new Status(0, 0, 10, -20)));
+                new Status(0, 0, 10, -20), imagePers));
         arrayList.add(new Card(R.string.governorName, R.string.governorQ5,
                 R.string.governorLO5, R.string.governorRO5
                 ,
                 new Status(0, -10, 0, 10),
-                new Status(0, 0, 0, 0)));
+                new Status(0, 0, 0, 0), imagePers));
         arrayList.add(new Card(R.string.governorName, R.string.governorQ6,
                 R.string.governorLO6, R.string.governorRO6
                 ,
                 new Status(0, -20, 0, 0),
-                new Status(-10, -10, -10, 0)));
+                new Status(-10, -10, -10, 0), imagePers));
         arrayList.add(new Card(R.string.governorName, R.string.governorQ7,
                 R.string.governorLO7, R.string.governorRO7
                 ,
                 new Status(0, -10, 0, 0),
-                new Status(0, 10, 10, -10)));
+                new Status(0, 10, 10, -10), imagePers));
     }
 
     private void ambassador(ArrayList<ICard> arrayList) {

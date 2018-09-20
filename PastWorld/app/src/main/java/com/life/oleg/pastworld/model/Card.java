@@ -68,6 +68,26 @@ public class Card implements ICard {
 //                ((rightStatus.getMoney() == 0) ? "" : "деньги") + ".";
     }
 
+    Card(int name, int question, int leftOpinion, int rightOpinion, Status leftStatus, Status rightStatus, int imagePers) {
+        this.name = name;
+        this.question = question;
+        this.leftOpinion = leftOpinion;
+        this.rightOpinion = rightOpinion;
+        this.leftStatus = leftStatus;
+        this.rightStatus = rightStatus;
+        image = imagePers;
+//        changeLeft = "Изменится: " +
+//                ((leftStatus.getEcology() == 0) ? "" : " экология ") +
+//                ((leftStatus.getPeople() == 0) ? "" : "люди ") +
+//                ((leftStatus.getMilitary() == 0) ? "" : "армия ") +
+//                ((leftStatus.getMoney() == 0) ? "" : "деньги") + ".";
+//        changeRight = "Изменится: " +
+//                ((rightStatus.getEcology() == 0) ? "" : "экология ") +
+//                ((rightStatus.getPeople() == 0) ? "" : "люди ") +
+//                ((rightStatus.getMilitary() == 0) ? "" : "армия ") +
+//                ((rightStatus.getMoney() == 0) ? "" : "деньги") + ".";
+    }
+
         @Override
     public void leftOpinion(Status status) {
         status.setMilitary(status.getMilitary() + leftStatus.getMilitary());
