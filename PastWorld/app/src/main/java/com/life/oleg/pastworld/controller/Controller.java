@@ -54,7 +54,7 @@ public class Controller {
         mainActivity.setOpinionText(card.getLeftOpinion(), card.getRightOpinion());
         mainActivity.setTaskText(card.getQuestion());
         mainActivity.setNameText(card.getName());
-//        mainActivity.setChangedImages(getChanged(card.getLeftStatus()), getChanged(card.getRightStatus()));//TODO ERRROR
+        mainActivity.setChangedImages(getChanged(card.getLeftStatus()), getChanged(card.getRightStatus()));//TODO ERRROR
         mainActivity.setImagePerson(card.getImage());
     }
 

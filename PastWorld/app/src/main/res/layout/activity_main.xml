@@ -392,7 +392,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                app:srcCompat="@drawable/avatar_governer" />
+                app:srcCompat="@drawable/example_avatar2" />
 
             <TextView
                 android:id="@+id/textLeftOpinion"
@@ -403,8 +403,8 @@
                 android:layout_marginRight="25dp"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/main_font"
-                android:textColor="@color/black"
                 android:text="TextView" />
+            <!--android:textColor="@color/black"-->
 
             <TextView
                 android:id="@+id/textRightOpinion"
@@ -415,8 +415,8 @@
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/main_font"
-                android:textColor="@color/black"
-                android:text="TextView" />
+                android:text="TextView"/>
+                <!--android:textColor="@color/black"/>-->
 
         </RelativeLayout>
 

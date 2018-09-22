@@ -43,6 +43,7 @@ public class Initializer /*extends AppCompatActivity */{
     }
 
     private  void scout(ArrayList<ICard> arrayList) {
+
         arrayList.add(new Card(R.string.scoutName, R.string.scoutQ1,
                 R.string.scoutLO1, R.string.scoutRO1,
                 new Status(-10, -20, 0, 0),
@@ -62,88 +63,91 @@ public class Initializer /*extends AppCompatActivity */{
     }
 
     private  void priest(ArrayList<ICard> arrayList) {
+        int imagePers = R.drawable.avatar_priest;
         arrayList.add(new Card(R.string.priestName, R.string.priestQ1,
                 R.string.priestLO1, R.string.priestRO1,
                 new Status(0, -10, 0, 0),
-                new Status(0, 10, 10, -20)));
+                new Status(0, 10, 10, -20), imagePers));
         arrayList.add(new Card(R.string.priestName, R.string.priestQ2,
                 R.string.priestLO2, R.string.priestRO2,
                 new Status(0, -20, 0, 10),
-                new Status(0, 10, -10, -20)));
+                new Status(0, 10, -10, -20), imagePers));
         arrayList.add(new Card(R.string.priestName, R.string.priestQ3,
                 R.string.priestLO3, R.string.priestRO3,
                 new Status(0, -10, 0, 0),
-                new Status(0, 20, 0, -10)));
+                new Status(0, 20, 0, -10), imagePers));
         arrayList.add(new Card(R.string.priestName, R.string.priestQ4,
                 R.string.priestLO4, R.string.priestRO4,
                 new Status(0, -20, 10, 0),
-                new Status(0, 10, -20, 0)));
+                new Status(0, 10, -20, 0), imagePers));
         arrayList.add(new Card(R.string.priestName, R.string.priestQ5,
                 R.string.priestLO5, R.string.priestRO5,
                 new Status(0, -20, 10, 0),
-                new Status(0, 10, -10, -20)));
+                new Status(0, 10, -10, -20), imagePers));
         arrayList.add(new Card(R.string.priestName, R.string.priestQ6,
                 R.string.priestLO6, R.string.priestRO6,
                 new Status(0, -20, 0, 0),
-                new Status(0, 0, 0, -10)));
+                new Status(0, 0, 0, -10), imagePers));
         arrayList.add(new Card(R.string.priestName, R.string.priestQ7,
                 R.string.priestLO7, R.string.priestRO7,
                 new Status(0, -20, 0, 0),
-                new Status(0, 10, -20, 0)));
+                new Status(0, 10, -20, 0), imagePers));
         arrayList.add(new Card(R.string.priestName, R.string.priestQ8,
                 R.string.priestLO8, R.string.priestRO8,
                 new Status(0, 10, 0, 0),
-                new Status(0, -20, 10, 10)));
+                new Status(0, -20, 10, 10), imagePers));
     }
 
     private  void scientist(ArrayList<ICard> arrayList) {
+        int imagePerson = R.drawable.avatar_doctor;
         arrayList.add(new Card(R.string.scientistName, R.string.scientistQ1,
                 R.string.scientistLO1, R.string.scientistRO1,
                 new Status(-10, -10, 0, 10),
-                new Status(20, 10, 0, -20)));
+                new Status(20, 10, 0, -20), imagePerson));
         arrayList.add(new Card(R.string.scientistName, R.string.scientistQ2,
                 R.string.scientistLO2, R.string.scientistRO2,
                 new Status(10, 10, 0, -10),
-                new Status(-20, -10, 0, 20)));
+                new Status(-20, -10, 0, 20), imagePerson));
         arrayList.add(new Card(R.string.scientistName, R.string.scientistQ3,
                 R.string.scientistLO3, R.string.scientistRO3,
                 new Status(0, 0, 0, 10),
-                new Status(10, 0, 10, -10)));
+                new Status(10, 0, 10, -10), imagePerson));
         arrayList.add(new Card(R.string.scientistName, R.string.scientistQ4,
                 R.string.scientistLO4, R.string.scientistRO4,
                 new Status(0, 10, 0, -10),
-                new Status(-20, -10, 0, 20)));
+                new Status(-20, -10, 0, 20), imagePerson));
         arrayList.add(new Card(R.string.scientistName, R.string.scientistQ5,
                 R.string.scientistLO5, R.string.scientistRO5,
                 new Status(0, 0, 0, 10),
-                new Status(20, 0, 0, -10)));
+                new Status(20, 0, 0, -10), imagePerson));
     }
 
     private  void general(ArrayList<ICard> arrayList) {
+        int imagePers = R.drawable.avatar_policeman;
         arrayList.add(new Card(R.string.generalName, R.string.generalQ1,
                 R.string.generalLO1, R.string.generalRO1,
                 new Status(0, 0, -10, 10),
-                new Status(0, 10, 10, -20)));
+                new Status(0, 10, 10, -20), imagePers));
         arrayList.add(new Card(R.string.generalName, R.string.generalQ2,
                 R.string.generalLO2, R.string.generalRO2,
                 new Status(0, -10, 10, 0),
-                new Status(0, 10, -10, -10)));
+                new Status(0, 10, -10, -10), imagePers));
         arrayList.add(new Card(R.string.generalName, R.string.generalQ3,
                 R.string.generalLO3, R.string.generalRO3,
                 new Status(0, 10, -10, 0),
-                new Status(0, -10, -20, 0)));
+                new Status(0, -10, -20, 0), imagePers));
         arrayList.add(new Card(R.string.generalName, R.string.generalQ4,
                 R.string.generalLO4, R.string.generalRO4,
                 new Status(-10, -10, -10, 0),
-                new Status(10, 10, 10, 0)));
+                new Status(10, 10, 10, 0), imagePers));
         arrayList.add(new Card(R.string.generalName, R.string.generalQ5,
                 R.string.generalLO5, R.string.generalRO5,
                 new Status(0, 10, -10, 0),
-                new Status(-20, -10, 30, -10)));
+                new Status(-20, -10, 30, -10), imagePers));
         arrayList.add(new Card(R.string.generalName, R.string.generalQ6,
                 R.string.generalLO6, R.string.generalRO6,
                 new Status(0, -20, -10, 10),
-                new Status(0, 10, 10, -10)));
+                new Status(0, 10, 10, -10), imagePers));
     }
 
     private  void housemaid(ArrayList<ICard> arrayList) {
@@ -167,39 +171,41 @@ public class Initializer /*extends AppCompatActivity */{
     }
 
     private  void vicePresident(ArrayList<ICard> arrayList) {
+        int imagePerson = R.drawable.avatar_hatman;
         arrayList.add(new Card(R.string.vicePresidentName, R.string.vicePresidentQ1,
                 R.string.vicePresidentLO1, R.string.vicePresidentRO1
                 ,
                 new Status(10, 10, 0, -10),
-                new Status(-10, 0, 0, 10)));
+                new Status(-10, 0, 0, 10), imagePerson));
         arrayList.add(new Card(R.string.vicePresidentName, R.string.vicePresidentQ2,
                 R.string.vicePresidentLO2, R.string.vicePresidentRO2
                 ,
                 new Status(10, 0, 0, -10),
-                new Status(-10, -10, 0, 20)));
+                new Status(-10, -10, 0, 20), imagePerson));
     }
 
     private  void ministerOfHelth(ArrayList<ICard> arrayList) {
+        int imagePerson = R.drawable.avatar_madam;
         arrayList.add(new Card(R.string.ministerOfHelthName, R.string.ministerOfHelthQ1,
                 R.string.ministerOfHelthLO1, R.string.ministerOfHelthRO1
                 ,
                 new Status(-20, 10, 0, 10),
-                new Status(10, 10, 0, 0)));
+                new Status(10, 10, 0, 0), imagePerson));
         arrayList.add(new Card(R.string.ministerOfHelthName, R.string.ministerOfHelthQ2,
                 R.string.ministerOfHelthLO2, R.string.ministerOfHelthRO2
                 ,
                 new Status(-10, -20, 0, 0),
-                new Status(20, 10, -10, -10)));
+                new Status(20, 10, -10, -10), imagePerson));
         arrayList.add(new Card(R.string.ministerOfHelthName, R.string.ministerOfHelthQ3,
                 R.string.ministerOfHelthLO3, R.string.ministerOfHelthRO3
                 ,
                 new Status(-10, -10, 0, 10),
-                new Status(0, 10, -10, -10)));
+                new Status(0, 10, -10, -10), imagePerson));
         arrayList.add(new Card(R.string.ministerOfHelthName, R.string.ministerOfHelthQ4,
                 R.string.ministerOfHelthLO4, R.string.ministerOfHelthRO4
                 ,
                 new Status(-20, -20, 0, 0),
-                new Status(0, 10, -10, -20)));
+                new Status(0, 10, -10, -20), imagePerson));
     }
 
     private  void governor(ArrayList<ICard> arrayList) {

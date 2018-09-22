@@ -25,7 +25,7 @@ import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private enum HandlerType {STATUS, IMAGECHANGES, TASK, YEAR, NAME, OPINION, IMAGE, COUNSELORS}
+//    private enum HandlerType {STATUS, IMAGECHANGES, TASK, YEAR, NAME, OPINION, IMAGE, COUNSELORS}
     private TextView taskText;
     private TextView yearText;
     private TextView nameText;
@@ -40,8 +40,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView[] imagesChangeRight = new ImageView[4];
     private Button buttonStart;
     private volatile boolean counselor = false;
+    private Handler mUIHandler = new Handler();
+    private HandlerWorker handlerWorker;
 
-    private HashMap<HandlerType, Handler> handlers = new HashMap<>();
+    //private HashMap<HandlerType, Handler> handlers = new HashMap<>();
 
     private boolean flag =false; //todo
 
@@ -49,75 +51,109 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         this.counselor = counselor;
     }
 
-    public void setImagePerson(final int imagePerson){
+    public void setImagePerson(final int image){
         Runnable runnable = new Runnable() {
             public void run() {
-                Message msg = handlers.get(HandlerType.IMAGE).obtainMessage();
-                Bundle bundle = new Bundle();
-                bundle.putInt("Key", imagePerson);
-                msg.setData(bundle);
-                handlers.get(HandlerType.IMAGE).sendMessage(msg);
+//                Message msg = handlers.get(HandlerType.IMAGE).obtainMessage();
+//                Bundle bundle = new Bundle();
+//                bundle.putInt("Key", imagePerson);
+//                msg.setData(bundle);
+//                handlers.get(HandlerType.IMAGE).sendMessage(msg);
+                mUIHandler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        imagePerson.setImageResource(image);
+                    }
+                });
             }
         };
-        Thread thread = new Thread(runnable);
-        thread.start();
+        handlerWorker.postTask(runnable);
     }
 
     public void setOpinionText(final int leftOpinion, final int rightOpinion) {
         Runnable runnable = new Runnable() {
             public void run() {
-                Message msg = handlers.get(HandlerType.OPINION).obtainMessage();
-                Bundle bundle = new Bundle();
-                bundle.putString("Left", getString(leftOpinion));
-                bundle.putString("Right", getString(rightOpinion));
-                msg.setData(bundle);
-                handlers.get(HandlerType.OPINION).sendMessage(msg);
+//                Message msg = handlers.get(HandlerType.OPINION).obtainMessage();
+//                Bundle bundle = new Bundle();
+//                bundle.putString("Left", getString(leftOpinion));
+//                bundle.putString("Right", getString(rightOpinion));
+//                msg.setData(bundle);
+//                handlers.get(HandlerType.OPINION).sendMessage(msg);
+                mUIHandler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        opinionText[0].setText(getString(leftOpinion));
+                        opinionText[1].setText(getString(rightOpinion));
+                    }
+                });
             }
         };
-        Thread thread = new Thread(runnable);
-        thread.start();
+        handlerWorker.postTask(runnable);
     }
 
     public void setNameText(final int name) {
         Runnable runnable = new Runnable() {
             public void run() {
-                Message msg = handlers.get(HandlerType.NAME).obtainMessage();
-                Bundle bundle = new Bundle();
-                bundle.putString("Key", getString(name));
-                msg.setData(bundle);
-                handlers.get(HandlerType.NAME).sendMessage(msg);
+//                Message msg = handlers.get(HandlerType.NAME).obtainMessage();
+//                Bundle bundle = new Bundle();
+//                bundle.putString("Key", getString(name));
+//                msg.setData(bundle);
+//                handlers.get(HandlerType.NAME).sendMessage(msg);
+                mUIHandler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        nameText.setText(getString(name));
+                    }
+                });
             }
         };
-        Thread thread = new Thread(runnable);
-        thread.start();
+        handlerWorker.postTask(runnable);
     }
 
     public void setYearText(final String s) {
         Runnable runnable = new Runnable() {
             public void run() {
-                Message msg = handlers.get(HandlerType.YEAR).obtainMessage();
-                Bundle bundle = new Bundle();
-                bundle.putString("Key", s);
-                msg.setData(bundle);
-                handlers.get(HandlerType.YEAR).sendMessage(msg);
+//                Message msg = handlers.get(HandlerType.YEAR).obtainMessage();
+//                Bundle bundle = new Bundle();
+//                bundle.putString("Key", s);
+//                msg.setData(bundle);
+//                handlers.get(HandlerType.YEAR).sendMessage(msg);
+                mUIHandler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        yearText.setText(s);
+                    }
+                });
             }
         };
-        Thread thread = new Thread(runnable);
-        thread.start();
+        handlerWorker.postTask(runnable);
     }
 
     public void setTaskText(final int question) {
+//        Runnable runnable = new Runnable() {
+//            public void run() {
+//                Message msg = handlers.get(HandlerType.TASK).obtainMessage();
+//                Bundle bundle = new Bundle();
+//                bundle.putString("Key", getString(question));
+//                msg.setData(bundle);
+//                handlers.get(HandlerType.TASK).sendMessage(msg);
+//            }
+//        };
+//        Thread thread = new Thread(runnable);
+//        thread.start();
         Runnable runnable = new Runnable() {
+            @Override
             public void run() {
-                Message msg = handlers.get(HandlerType.TASK).obtainMessage();
-                Bundle bundle = new Bundle();
-                bundle.putString("Key", getString(question));
-                msg.setData(bundle);
-                handlers.get(HandlerType.TASK).sendMessage(msg);
+                mUIHandler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        taskText.setText(getString(question));
+                    }
+                });
             }
         };
-        Thread thread = new Thread(runnable);
-        thread.start();
+        handlerWorker.postTask(runnable);
+
     }
 
 
@@ -125,8 +161,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void setChangedImages(final Status.Change[] left, final Status.Change[] right) {//todo Динамическое изменение кружочков на стрелочки
         Runnable runnable = new Runnable() {
             public void run() {
-                int[] resLeft = new int[4];
-                int[] resRight = new int[4];
+                final int[] resLeft = new int[4];
+                final int[] resRight = new int[4];
                 if(!counselor){
                     for (int i = 0; i < 4; i++) {
                         if (left[i] == Status.Change.UP){
@@ -163,23 +199,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                 }
 
-                Message msg = handlers.get(HandlerType.IMAGECHANGES).obtainMessage();
-                Bundle bundle = new Bundle();
-                bundle.putIntArray("Left", resLeft);
-                bundle.putIntArray("Right", resRight);
-                msg.setData(bundle);
-                handlers.get(HandlerType.IMAGECHANGES).sendMessage(msg);
+                mUIHandler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        for (int i = 0; i < 4; i++) {
+                            imagesChangeLeft[i].setImageResource(resLeft[i]);
+                            imagesChangeLeft[i].setTag(resLeft[i]);
+                            imagesChangeRight[i].setImageResource(resRight[i]);
+                            imagesChangeRight[i].setTag(resRight[i]);
+                        }
+                    }
+                });
+//                Message msg = handlers.get(HandlerType.IMAGECHANGES).obtainMessage();
+//                Bundle bundle = new Bundle();
+//                bundle.putIntArray("Left", resLeft);
+//                bundle.putIntArray("Right", resRight);
+//                msg.setData(bundle);
+//                handlers.get(HandlerType.IMAGECHANGES).sendMessage(msg);
             }
         };
-        Thread thread = new Thread(runnable);
-        thread.start();
+        handlerWorker.postTask(runnable);
     }
 
     public void counselorChangeImages(){
         Runnable runnable = new Runnable() {
             public void run() {
-                int[] resLeft = new int[4];
-                int[] resRight = new int[4];
+                final int[] resLeft = new int[4];
+                final int[] resRight = new int[4];
                 if(!counselor){
                     for (int i = 0; i < 4; i++) {
                         if((int)imagesChangeLeft[i].getTag() == R.drawable.rectangle_down){
@@ -214,47 +260,78 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                 }
 
-                Message msg = handlers.get(HandlerType.IMAGECHANGES).obtainMessage();
-                Bundle bundle = new Bundle();
-                bundle.putIntArray("Left", resLeft);
-                bundle.putIntArray("Right", resRight);
-                msg.setData(bundle);
-                handlers.get(HandlerType.IMAGECHANGES).sendMessage(msg);
+                mUIHandler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        for (int i = 0; i < 4; i++) {
+                            imagesChangeLeft[i].setImageResource(resLeft[i]);
+                            imagesChangeLeft[i].setTag(resLeft[i]);
+                            imagesChangeRight[i].setImageResource(resRight[i]);
+                            imagesChangeRight[i].setTag(resRight[i]);
+                        }
+                    }
+                });
+//                Message msg = handlers.get(HandlerType.IMAGECHANGES).obtainMessage();
+//                Bundle bundle = new Bundle();
+//                bundle.putIntArray("Left", resLeft);
+//                bundle.putIntArray("Right", resRight);
+//                msg.setData(bundle);
+//                handlers.get(HandlerType.IMAGECHANGES).sendMessage(msg);
             }
         };
-        Thread thread = new Thread(runnable);
-        thread.start();
+        handlerWorker.postTask(runnable);
     }
 
     public void setStatus(final int ecology, final int people, final int military, final int money) {
-        Runnable runnable1 = new Runnable() {
+        Runnable runnable = new Runnable() {
             public void run() {
-                Message msg = handlers.get(HandlerType.STATUS).obtainMessage();
-                Bundle bundle = new Bundle();
-                bundle.putInt("ecology", ecology);
-                bundle.putInt("people", people);
-                bundle.putInt("military", military);
-                bundle.putInt("money", money);
-                msg.setData(bundle);
-                handlers.get(HandlerType.STATUS).sendMessage(msg);
+//                Message msg = handlers.get(HandlerType.STATUS).obtainMessage();
+//                Bundle bundle = new Bundle();
+//                bundle.putInt("ecology", ecology);
+//                bundle.putInt("people", people);
+//                bundle.putInt("military", military);
+//                bundle.putInt("money", money);
+//                msg.setData(bundle);
+//                handlers.get(HandlerType.STATUS).sendMessage(msg);
+                mUIHandler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                            statusProgressBars[0].setProgress(ecology, true);
+                            statusProgressBars[1].setProgress(people, true);
+                            statusProgressBars[2].setProgress(military, true);
+                            statusProgressBars[3].setProgress(money, true);
+                        } else {
+                            statusProgressBars[0].setProgress(ecology);
+                            statusProgressBars[1].setProgress(people);
+                            statusProgressBars[2].setProgress(military);
+                            statusProgressBars[3].setProgress(money);
+                        }
+                    }
+                });
             }
         };
-        Thread thread1 = new Thread(runnable1);
-        thread1.start();
+        handlerWorker.postTask(runnable);
     }
 
     public void setCounselorCounter(final int counselors) {
         Runnable runnable = new Runnable() {
             public void run() {
-                Message msg = handlers.get(HandlerType.COUNSELORS).obtainMessage();
-                Bundle bundle = new Bundle();
-                bundle.putInt("Key", counselors);
-                msg.setData(bundle);
-                handlers.get(HandlerType.COUNSELORS).sendMessage(msg);
+//                Message msg = handlers.get(HandlerType.COUNSELORS).obtainMessage();
+//                Bundle bundle = new Bundle();
+//                bundle.putInt("Key", counselors);
+//                msg.setData(bundle);
+//                handlers.get(HandlerType.COUNSELORS).sendMessage(msg);
+                final String s = (getString(R.string.remainedCounselors) + counselors);
+                mUIHandler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        counterCounselors.setText(s);
+                    }
+                });
             }
         };
-        Thread thread = new Thread(runnable);
-        thread.start();
+        handlerWorker.postTask(runnable);
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -263,6 +340,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
+        handlerWorker = new HandlerWorker("My Handler Worker");
+        handlerWorker.start();
+        handlerWorker.prepareHandler();
 
         mVisible = true;
         mContentView = findViewById(R.id.frameLayout);
@@ -322,7 +402,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-        initHandlers();
+        //initHandlers();
 
         MainGame mainGame = new MainGame();
         Controller.setMainGame(mainGame);
@@ -363,102 +443,108 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @SuppressLint("HandlerLeak")
-    private void initHandlers() {
+//    private void initHandlers() {
+//
+//        handlers.put(HandlerType.IMAGECHANGES,new android.os.Handler() {
+//            @Override
+//            public void handleMessage(Message msg) {
+//                Bundle bundle = msg.getData();
+//                int[] left = bundle.getIntArray("Left");
+//                int[] right = bundle.getIntArray("Right");
+//                for (int i = 0; i < 4; i++) {
+//                    imagesChangeLeft[i].setImageResource(left[i]);
+//                    imagesChangeLeft[i].setTag(left[i]);
+//                    imagesChangeRight[i].setImageResource(right[i]);
+//                    imagesChangeRight[i].setTag(right[i]);
+//                }
+//            }
+//        });
+//
+//        handlers.put(HandlerType.TASK ,new android.os.Handler() {
+//            @Override
+//            public void handleMessage(Message msg) {
+//                Bundle bundle = msg.getData();
+//                String s = bundle.getString("Key");
+//                taskText.setText(s);
+//            }
+//        });
+//
+//        handlers.put(HandlerType.COUNSELORS ,new android.os.Handler() {
+//            @Override
+//            public void handleMessage(Message msg) {
+//                Bundle bundle = msg.getData();
+//                int counselors = bundle.getInt("Key");
+//                String s = (getString(R.string.remainedCounselors) + counselors);
+//                counterCounselors.setText(s);
+//            }
+//        });
+//
+//        handlers.put(HandlerType.YEAR,new android.os.Handler() {
+//            @Override
+//            public void handleMessage(Message msg) {
+//                Bundle bundle = msg.getData();
+//                String s = bundle.getString("Key");
+//                yearText.setText(s);
+//            }
+//        });
+//
+//        handlers.put(HandlerType.NAME,new android.os.Handler() {
+//            @Override
+//            public void handleMessage(Message msg) {
+//                Bundle bundle = msg.getData();
+//                String s = bundle.getString("Key");
+//                nameText.setText(s);
+//            }
+//        });
+//
+//        handlers.put(HandlerType.OPINION ,new android.os.Handler() {
+//            @Override
+//            public void handleMessage(Message msg) {
+//                Bundle bundle = msg.getData();
+//                String left = bundle.getString("Left");
+//                String right = bundle.getString("Right");
+//                opinionText[0].setText(left);
+//                opinionText[1].setText(right);
+//            }
+//        });
+//
+//        handlers.put(HandlerType.STATUS ,new android.os.Handler() {
+//            @Override
+//            public void handleMessage(Message msg) {
+//                Bundle bundle = msg.getData();
+//                int ecology = bundle.getInt("ecology");
+//                int people = bundle.getInt("people");
+//                int military = bundle.getInt("military");
+//                int money = bundle.getInt("money");
+//                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+//                    statusProgressBars[0].setProgress(ecology, true);
+//                    statusProgressBars[1].setProgress(people, true);
+//                    statusProgressBars[2].setProgress(military, true);
+//                    statusProgressBars[3].setProgress(money, true);
+//                } else {
+//                    statusProgressBars[0].setProgress(ecology);
+//                    statusProgressBars[1].setProgress(people);
+//                    statusProgressBars[2].setProgress(military);
+//                    statusProgressBars[3].setProgress(money);
+//                }
+//
+//            }
+//        });
+//
+//        handlers.put(HandlerType.IMAGE ,new android.os.Handler() {
+//            @Override
+//            public void handleMessage(Message msg) {
+//                Bundle bundle = msg.getData();
+//                int res = bundle.getInt("Key");
+//                imagePerson.setImageResource(res);
+//            }
+//        });
+//    }
 
-        handlers.put(HandlerType.IMAGECHANGES,new android.os.Handler() {
-            @Override
-            public void handleMessage(Message msg) {
-                Bundle bundle = msg.getData();
-                int[] left = bundle.getIntArray("Left");
-                int[] right = bundle.getIntArray("Right");
-                for (int i = 0; i < 4; i++) {
-                    imagesChangeLeft[i].setImageResource(left[i]);
-                    imagesChangeLeft[i].setTag(left[i]);
-                    imagesChangeRight[i].setImageResource(right[i]);
-                    imagesChangeRight[i].setTag(right[i]);
-                }
-            }
-        });
-
-        handlers.put(HandlerType.TASK ,new android.os.Handler() {
-            @Override
-            public void handleMessage(Message msg) {
-                Bundle bundle = msg.getData();
-                String s = bundle.getString("Key");
-                taskText.setText(s);
-            }
-        });
-
-        handlers.put(HandlerType.COUNSELORS ,new android.os.Handler() {
-            @Override
-            public void handleMessage(Message msg) {
-                Bundle bundle = msg.getData();
-                int counselors = bundle.getInt("Key");
-                String s = (getString(R.string.remainedCounselors) + counselors);
-                counterCounselors.setText(s);
-            }
-        });
-
-        handlers.put(HandlerType.YEAR,new android.os.Handler() {
-            @Override
-            public void handleMessage(Message msg) {
-                Bundle bundle = msg.getData();
-                String s = bundle.getString("Key");
-                yearText.setText(s);
-            }
-        });
-
-        handlers.put(HandlerType.NAME,new android.os.Handler() {
-            @Override
-            public void handleMessage(Message msg) {
-                Bundle bundle = msg.getData();
-                String s = bundle.getString("Key");
-                nameText.setText(s);
-            }
-        });
-
-        handlers.put(HandlerType.OPINION ,new android.os.Handler() {
-            @Override
-            public void handleMessage(Message msg) {
-                Bundle bundle = msg.getData();
-                String left = bundle.getString("Left");
-                String right = bundle.getString("Right");
-                opinionText[0].setText(left);
-                opinionText[1].setText(right);
-            }
-        });
-
-        handlers.put(HandlerType.STATUS ,new android.os.Handler() {
-            @Override
-            public void handleMessage(Message msg) {
-                Bundle bundle = msg.getData();
-                int ecology = bundle.getInt("ecology");
-                int people = bundle.getInt("people");
-                int military = bundle.getInt("military");
-                int money = bundle.getInt("money");
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                    statusProgressBars[0].setProgress(ecology, true);
-                    statusProgressBars[1].setProgress(people, true);
-                    statusProgressBars[2].setProgress(military, true);
-                    statusProgressBars[3].setProgress(money, true);
-                } else {
-                    statusProgressBars[0].setProgress(ecology);
-                    statusProgressBars[1].setProgress(people);
-                    statusProgressBars[2].setProgress(military);
-                    statusProgressBars[3].setProgress(money);
-                }
-
-            }
-        });
-
-        handlers.put(HandlerType.IMAGE ,new android.os.Handler() {
-            @Override
-            public void handleMessage(Message msg) {
-                Bundle bundle = msg.getData();
-                int res = bundle.getInt("Key");
-                imagePerson.setImageResource(res);
-            }
-        });
+    @Override
+    protected void onDestroy() {
+        handlerWorker.quit();
+        super.onDestroy();
     }
 
     /**
