@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "838671070078",
+    "firebase_url": "https://past-world.firebaseio.com",
+    "project_id": "past-world",
+    "storage_bucket": "past-world.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:838671070078:android:d05fafd76096b5b1",
+        "android_client_info": {
+          "package_name": "life.oleg.pastworld"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "838671070078-5o9up2hcnc9fuqj7r98sg41usm3efukt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "life.oleg.pastworld",
+            "certificate_hash": "bbdefec7512e9946033a95fb888611ef51ed9d80"
+          }
+        },
+        {
+          "client_id": "838671070078-cggpuvn4j9ticni227aqimv2suspa1j2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxeSqDy7upCYRPKrGFY6Mok7LdA8YBq88"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "838671070078-cggpuvn4j9ticni227aqimv2suspa1j2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

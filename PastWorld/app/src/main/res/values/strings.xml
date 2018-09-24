@@ -183,6 +183,8 @@
     <string name="start">Начать!</string>
     <string name="buyCounselors">Купить советников</string>
     <string name="remainedCounselors">Осталось советников:</string>
+    <string name="ad_app">ca-app-pub-5024086206882853~4351619573</string>
+    <string name="ad_fullscreen">ca-app-pub-5024086206882853/2416555528</string>
 
 
 </resources>
