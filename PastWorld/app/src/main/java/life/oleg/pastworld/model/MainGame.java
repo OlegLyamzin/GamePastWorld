@@ -25,6 +25,14 @@ public class MainGame implements Runnable {
         this.lose = lose;
     }
 
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
     public void resetStatus() {
         status.setEcology(50);
         status.setPeople(50);
@@ -50,7 +58,11 @@ public class MainGame implements Runnable {
 
     public void addCounselors() {
         player.addCounselors();
-        Controller.setCounselorsCounter(player.getCounselors());
+        Controller.setCounselorsCounter();
+    }
+
+    public int getCounselors(){
+        return player.getCounselors();
     }
 
     @Override
@@ -59,7 +71,7 @@ public class MainGame implements Runnable {
         int lastIndexCard = -1;
         while (true) {
             Controller.setStatus(status.getEcology(),status.getPeople(),status.getMilitary(),status.getMoney());
-            Controller.setCounselorsCounter(player.getCounselors());
+            Controller.setCounselorsCounter();
             while (lose == Status.Lose.NOTHING) {
                 Controller.setYear(player.getYear(), status.getDaysOnThrone());
                 int indexCard = random.nextInt(cards.size());

@@ -13,16 +13,16 @@ public class Player {//TODO
     //Эпоха
     private int era;
     //Опыт
-    private int expirience;
+    private int experience;
 
-    public Player(String name, int year, int lives, int counselors, boolean ads, int era, int expirience) {
+    public Player(String name, int year, int lives, int counselors, boolean ads, int era, int experience) {
         this.name = name;
         this.year = year;
         this.lives = lives;
         this.counselors = counselors;
         this.ads = ads;
         this.era = era;
-        this.expirience = expirience;
+        this.experience = experience;
     }
 
     public String getName() {
@@ -73,12 +73,12 @@ public class Player {//TODO
         this.era = era;
     }
 
-    public int getExpirience() {
-        return expirience;
+    public int getExperience() {
+        return experience;
     }
 
-    public void setExpirience(int expirience) {
-        this.expirience = expirience;
+    public void setExperience(int experience) {
+        this.experience = experience;
     }
 
     public int activateCounselor(){

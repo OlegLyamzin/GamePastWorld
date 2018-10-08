@@ -3,9 +3,10 @@ package life.oleg.pastworld.view;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.SuppressLint;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Handler;
-import android.os.Message;
+import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,13 +25,19 @@ import com.google.android.gms.ads.MobileAds;
 import life.oleg.pastworld.R;
 import life.oleg.pastworld.controller.Controller;
 import life.oleg.pastworld.model.MainGame;
+import life.oleg.pastworld.model.Player;
 import life.oleg.pastworld.model.Status;
-
-import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
 //    private enum HandlerType {STATUS, IMAGECHANGES, TASK, YEAR, NAME, OPINION, IMAGE, COUNSELORS}
+    private final String NAME = "name";
+    private final String YEAR = "year";
+    private final String LIVES = "lives";
+    private final String COUNSELORS = "counselors";
+    private final String ADS = "ads";
+    private final String ERA = "era";
+    private final String EXPERIENCE = "experience";
     private TextView taskText;
     private TextView yearText;
     private TextView nameText;
@@ -371,6 +378,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         buttonStart = findViewById(R.id.buttonStart);
         buttonStart.setOnClickListener(this);
+        findViewById(R.id.adsRemoveBtn).setOnClickListener(this);
 
         opinionText[0] = findViewById(R.id.textLeftOpinion);
         opinionText[1] = findViewById(R.id.textRightOpinion);
@@ -430,6 +438,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Controller.setMainGame(mainGame);
         Controller.setMainActivity(this);
         new Thread(mainGame).start();
+        if (savedInstanceState != null) {
+            if (savedInstanceState.getBoolean("hasState")) {
+                load();
+            }
+        }
     }
 
     @Override
@@ -442,6 +455,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //            Controller.restart();
 //            relativeLayoutGame.setVisibility(View.VISIBLE);
             Controller.continueGame();
+        }
+        if(v == findViewById(R.id.adsRemoveBtn)){
+            Controller.adsChange();
         }
     }
 
@@ -581,6 +597,46 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onDestroy();
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        save();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putBoolean("hasState", true);
+        save();
+        super.onSaveInstanceState(outState);
+    }
+
+    public void save(){
+        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = settings.edit();
+        Player player = Controller.getPlayer();
+        editor.putString(NAME, player.getName());
+        editor.putInt(YEAR, player.getYear());
+        editor.putInt(LIVES, player.getLives());
+        editor.putInt(COUNSELORS, player.getCounselors());
+        editor.putBoolean(ADS, player.isAds());
+        editor.putInt(ERA, player.getEra());
+        editor.putInt(EXPERIENCE, player.getExperience());
+        editor.apply();
+    }
+
+    public void load(){
+        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
+        Player player = Controller.getPlayer();
+        player.setName(settings.getString(NAME, player.getName()));
+        player.setYear(settings.getInt(YEAR, player.getYear()));
+        player.setLives(settings.getInt(LIVES, player.getLives()));
+        player.setCounselors(settings.getInt(COUNSELORS, player.getCounselors()));
+        player.setAds(settings.getBoolean(ADS, player.isAds()));
+        player.setEra(settings.getInt(ERA, player.getEra()));
+        player.setExperience(settings.getInt(EXPERIENCE, player.getExperience()));
+        Controller.setCounselorsCounter();
+    }
+
     /**
      * Внимание!! все что дальше скопировано и сделано для полноэкранного режима
      */
@@ -693,6 +749,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // created, to briefly hint to the user that UI controls
         // are available.
         delayedHide(0);
+
+        load();
     }
 
 //    private void toggle() {

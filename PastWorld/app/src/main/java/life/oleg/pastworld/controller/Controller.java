@@ -3,6 +3,7 @@ package life.oleg.pastworld.controller;
 import android.annotation.SuppressLint;
 
 import life.oleg.pastworld.R;
+import life.oleg.pastworld.model.Player;
 import life.oleg.pastworld.model.Status;
 import life.oleg.pastworld.view.MainActivity;
 import life.oleg.pastworld.model.ICard;
@@ -18,7 +19,9 @@ public class Controller {
     }
 
     public static void showAdFulscreen(){
-        mainActivity.showAd();
+        if(mainGame.getPlayer().isAds()) {
+            mainActivity.showAd();
+        }
     }
 
     public static void setMainGame(MainGame mainGame) {
@@ -116,11 +119,11 @@ public class Controller {
             mainActivity.setCounselor(true);
             mainActivity.counselorChangeImages();
         }
-        setCounselorsCounter(counselors);
+        setCounselorsCounter();
     }
 
-    public static void setCounselorsCounter(int counselors){//TODO
-        mainActivity.setCounselorCounter(counselors);
+    public static void setCounselorsCounter(){//TODO
+        mainActivity.setCounselorCounter(mainGame.getCounselors());
     }
 
     public static void increaseYear() {
@@ -129,5 +132,17 @@ public class Controller {
 
     public static void addCounselors() {
         mainGame.addCounselors();
+    }
+
+    public static Player getPlayer(){
+        return mainGame.getPlayer();
+    }
+
+    public static void setPlayer(Player player){
+        mainGame.setPlayer(player);
+    }
+
+    public static void adsChange() {
+        mainGame.getPlayer().setAds(!mainGame.getPlayer().isAds());
     }
 }

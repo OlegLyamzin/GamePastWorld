@@ -8,49 +8,55 @@
     android:orientation="vertical"
     tools:context=".view.MainActivity">
 
-    <RelativeLayout
-        android:id="@+id/relativeLayoutStart"
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/includeStart"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="@color/backgroundTopAndBottom"-->
+        <!--tools:context="life.oleg.pastworld.view.StartActivity">-->
+
+        <!--&lt;!&ndash; The primary full-screen view. This can be replaced with whatever view-->
+         <!--is needed to present your content, e.g. VideoView, SurfaceView,-->
+         <!--TextureView, etc. &ndash;&gt;-->
+
+        <!--&lt;!&ndash; This FrameLayout insets its children based on system windows using-->
+         <!--android:fitsSystemWindows. &ndash;&gt;-->
+
+        <!--<Button-->
+            <!--android:id="@+id/buttonStart"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:fontFamily="@font/main_font"-->
+            <!--android:text="@string/start" />-->
+
+        <!--<Button-->
+            <!--android:id="@+id/buttonBuyCounselors"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_above="@+id/buttonStart"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_marginBottom="15dp"-->
+            <!--android:fontFamily="@font/main_font"-->
+            <!--android:text="@string/buyCounselors" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/counselorsCounter"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_above="@+id/buttonBuyCounselors"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_marginBottom="20dp"-->
+            <!--android:fontFamily="@font/main_font"-->
+            <!--android:gravity="center"-->
+            <!--android:text="Добро пожаловать!" />-->
+    <!--</RelativeLayout>-->
+
+    <include
+        layout="@layout/start_layout"
+        android:id="@+id/includeStart"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/backgroundTopAndBottom"
-        tools:context="life.oleg.pastworld.view.StartActivity">
-
-        <!-- The primary full-screen view. This can be replaced with whatever view
-         is needed to present your content, e.g. VideoView, SurfaceView,
-         TextureView, etc. -->
-
-        <!-- This FrameLayout insets its children based on system windows using
-         android:fitsSystemWindows. -->
-
-        <Button
-            android:id="@+id/buttonStart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:fontFamily="@font/main_font"
-            android:text="@string/start" />
-
-        <Button
-            android:id="@+id/buttonBuyCounselors"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/buttonStart"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="15dp"
-            android:fontFamily="@font/main_font"
-            android:text="@string/buyCounselors" />
-
-        <TextView
-            android:id="@+id/counselorsCounter"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/buttonBuyCounselors"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="20dp"
-            android:fontFamily="@font/main_font"
-            android:gravity="center"
-            android:text="Добро пожаловать!" />
-    </RelativeLayout>
+        android:layout_height="match_parent" />
 
     <RelativeLayout
         android:id="@+id/relativeLayoutGame"
